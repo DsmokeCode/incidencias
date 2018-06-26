@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-06-2018 a las 22:45:25
+-- Tiempo de generación: 26-06-2018 a las 09:10:27
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 5.6.36
 
@@ -39,6 +39,20 @@ CREATE TABLE `dashboard` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `historial_dashboard`
+--
+
+CREATE TABLE `historial_dashboard` (
+  `id_historial` int(11) NOT NULL,
+  `id_dashboard` int(11) NOT NULL,
+  `descripcion` varchar(300) NOT NULL,
+  `fecha_reg` date NOT NULL,
+  `estado` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `incidencia`
 --
 
@@ -49,7 +63,7 @@ CREATE TABLE `incidencia` (
   `titulo` varchar(100) NOT NULL,
   `descripcion` varchar(100) NOT NULL,
   `fecha_reg` date NOT NULL,
-  `estado` varchar(50) NOT NULL
+  `estado` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -87,7 +101,8 @@ CREATE TABLE `usuario` (
   `ape_p` varchar(100) NOT NULL,
   `ape_m` varchar(100) NOT NULL,
   `pass` varchar(100) NOT NULL,
-  `id_tipo_persona` int(11) NOT NULL
+  `id_tipo_persona` int(11) NOT NULL,
+  `dni` char(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -100,6 +115,13 @@ CREATE TABLE `usuario` (
 ALTER TABLE `dashboard`
   ADD PRIMARY KEY (`id_dashboard`),
   ADD KEY `id_incidencia` (`id_incidencia`,`id_usuario`);
+
+--
+-- Indices de la tabla `historial_dashboard`
+--
+ALTER TABLE `historial_dashboard`
+  ADD PRIMARY KEY (`id_historial`),
+  ADD KEY `id_dashboard` (`id_dashboard`);
 
 --
 -- Indices de la tabla `incidencia`
@@ -138,6 +160,12 @@ ALTER TABLE `dashboard`
   MODIFY `id_dashboard` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `historial_dashboard`
+--
+ALTER TABLE `historial_dashboard`
+  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `incidencia`
 --
 ALTER TABLE `incidencia`
@@ -170,6 +198,12 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `dashboard`
   ADD CONSTRAINT `dashboard_ibfk_1` FOREIGN KEY (`id_incidencia`) REFERENCES `incidencia` (`id_incidencia`);
+
+--
+-- Filtros para la tabla `historial_dashboard`
+--
+ALTER TABLE `historial_dashboard`
+  ADD CONSTRAINT `historial_dashboard_ibfk_1` FOREIGN KEY (`id_dashboard`) REFERENCES `dashboard` (`id_dashboard`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
