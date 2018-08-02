@@ -27,17 +27,15 @@
 	  <ul class="sidebar-menu" data-widget="tree">
 		<li class="header">Menú de Navegación</li>
 		<li class="active treeview menu-open">
-		  <a href="#">
-			<i class="fa fa-files-o"></i> <span>Citas</span>
-			<span class="pull-right-container">
-			  <i class="fa fa-angle-left pull-right"></i>
-			</span>
-		  </a>
-		  <ul class="treeview-menu">
-			<li><a href="<?php echo base_url();?>chistorialcitas"><i class="fa fa-list-ul"></i>Historial de Citas del cliente</a></li>
-			<li class="active"><a href="index2.html"><i class="fa fa-book"></i>Citas pendientes</a></li>
-		  </ul>
+			<a href="<?php echo base_url();?>cdashboard">
+			<i class="fa fa-edit"></i> <span>Dashboard</span>
+			</a>
 		</li>
+		<li class="active treeview menu-open">
+			<a href="#">
+			<i class="fa  fa-file-text"></i> <span>Reportar Incidencia</span>
+			</a>
+		</li>		
 	  </ul>
 	</section>
 	<!-- /.sidebar -->

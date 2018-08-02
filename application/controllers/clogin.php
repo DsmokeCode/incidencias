@@ -16,18 +16,18 @@ public function index(){
 	$this->load->view('vlogin',$data);
 }
 public function ingresar(){
-	$correo = $this->input->post('correo');
-	$contra = $this->input->post('contra');
+	$email = $this->input->post('email');
+	$pass = $this->input->post('pass');
 
-	$res = $this->mlogin->ingresar($correo,$contra);
+	$res = $this->mlogin->ingresar($email,$pass);
 
 	if ($res == 1) {
 		$this->load->view('layout/header');
 		$this->load->view('layout/menupac');
-		$this->load->view('vhistorialcitas');
+		$this->load->view('vdashboard');
 		$this->load->view('layout/footer');
 	} else {
-		$data['mensaje'] ="Correo o Contraseña Erronea";
+		$data['mensaje'] ="Email o Contraseña Erronea";
 		$this->load->view('vlogin',$data);
 	}
 	

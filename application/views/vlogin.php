@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Clinicor Norte   | Citas</title>
+	<title>Incidencias | Upbit</title>
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<!-- Bootstrap 3.3.7 -->
@@ -30,7 +30,7 @@
 <body class="hold-transition login-page" style="height:0;">
 <div class="login-box">
 	<div class="login-logo">
-		<b>Clinicor Norte   </b>- Citas
+		<b>Incidencias   </b>- Upbit
 	</div>
 	<!-- /.login-logo -->
 	<div class="login-box-body">
@@ -38,11 +38,11 @@
 
 		<form action="<?php echo base_url();?>clogin/ingresar" method="POST">
 			<div class="form-group has-feedback">
-				<input type="email" name="correo" class="form-control" placeholder="Correo">
+				<input type="email" name="email" class="form-control" placeholder="Email">
 				<span class="glyphicon glyphicon-user form-control-feedback"></span>
 			</div>
 			<div class="form-group has-feedback">
-				<input type="password" name="contra" class="form-control" placeholder="Contraseña">
+				<input type="password" name="pass" class="form-control" placeholder="Contraseña">
 				<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 			</div>
 			<div class="row">
@@ -55,7 +55,7 @@
 				</div> -->
 			<!-- /.col -->
 				<div class="col-xs-12">
-					<button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button><br>
+					<button type="submit" class="btn btn-success btn-block btn-flat">Ingresar</button><br>
 				</div>
 			<!-- /.col -->
 			</div>
@@ -68,7 +68,7 @@
 			Google+</a>
 		</div> -->
 		<!-- /.social-auth-links -->
-		<a href="#">Registrarse</a><br>
+		<!-- <a href="#">Registrarse</a><br> -->
 		<!-- <a href="register.html" class="text-center">Register a new membership</a> -->
 		<?php echo $mensaje; ?>
 	</div>
